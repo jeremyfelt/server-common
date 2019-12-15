@@ -19,4 +19,4 @@ jobs:
         public-key: ${{ secrets.SSH_KEY_PUBLIC }}
         name: id_rsa # optional
     - name: rsync over ssh
-      run: rsync ./ {{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{secrets.REMOTE_TARGET }}
+      run: rsync ./ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{secrets.REMOTE_TARGET }}

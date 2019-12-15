@@ -20,3 +20,5 @@ jobs:
         name: id_rsa # optional
     - name: rsync over ssh
       run: rsync ./ ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{secrets.REMOTE_TARGET }}
+    - name: test ssh
+      run: ssh -v ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}

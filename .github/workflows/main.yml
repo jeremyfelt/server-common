@@ -18,7 +18,5 @@ jobs:
         private-key: ${{ secrets.SERVER_SSH_KEY }}
         public-key: ${{ secrets.SSH_KEY_PUBLIC }}
         name: id_rsa # optional
-    - name: Install packages
-      run: apt install openssh-client rsync
     - name: rsync over ssh
       run: rsync ./ {{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:${{secrets.REMOTE_TARGET }}
